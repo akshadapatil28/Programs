@@ -1,0 +1,22 @@
+//Write a program and ask the user to enter their name. Use an array to reverse the name and then store the result in a new string. Display the reversed name on the console.
+
+using System;
+
+namespace PracticeProgram1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a name ");
+            var arr = Console.ReadLine();
+            var arr1 = new char[arr.Length];
+            for (var i = arr.Length; i > 0; i--)
+            {
+                arr1[arr.Length - i] = arr[i - 1];
+            }
+            var rev = new string(arr1);
+            Console.WriteLine("Reversed String: "+rev);
+        }
+    }
+}
