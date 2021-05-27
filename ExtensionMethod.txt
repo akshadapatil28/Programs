@@ -1,0 +1,31 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExtensionMethod
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "akshada";
+            var str1 = str.ChangeFirstLetter();
+            System.Console.WriteLine("String: "+str1);
+        }
+    }
+}
+public static class Change
+    {
+        public static string ChangeFirstLetter(this String str)
+        {
+            if (str.Length > 0)
+            {
+                char[] s = str.ToCharArray();
+                s[0]= char.IsUpper(s[0]) ? char.ToLower(s[0]) : char.ToUpper(s[0]);
+                return new string(s);
+            }
+
+            return str;
+        }
+    }
